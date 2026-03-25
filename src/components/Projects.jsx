@@ -8,31 +8,33 @@ export default function Projects({ scrollToHome }) {
       description: "A professional single-page application to showcase my technical journey.",
       features: ["Component-based structure", "Responsive design", "Smooth Navigation"],
       icon: <Layers className="text-blue-400" />,
-      link: "https://github.com/dlvvs1" 
+      github: "https://github.com/dlvvs1/My-Portfolio",
+      live: "https://dlvvs1.github.io/My-Portfolio/" // Your main portfolio live link
     },
     {
-      title: "Calculator Web App",
+      title: "Calculator Web App(mini-project)",
       tech: ["HTML", "CSS", "JavaScript"],
-      description: "A functional web application built with a focus on clean UI and JavaScript logic[cite: 45, 46, 47].",
+      description: "A functional web application built with a focus on clean UI and JavaScript logic.",
       features: ["Basic Arithmetic", "Button-based input", "Clean UI"],
       icon: <Code className="text-emerald-400" />,
-      link: "https://github.com/dlvvs1/HTML/blob/main/calculator/calculator.html"
+      github: "https://github.com/dlvvs1/Calculator",
+      live: "https://dlvvs1.github.io/Calculator/" // The link we just fixed!
     },
     {
-      title: "Age Calculator",
+      title: "Age Calculator(mini-project)",
       tech: ["Python"],
-      description: "Calculates exact age from a date of birth using the Python datetime module[cite: 39, 40, 41].",
+      description: "Calculates exact age from a date of birth using the Python datetime module.",
       features: ["Leap year handling", "Date logic", "Precise output"],
       icon: <Terminal className="text-purple-400" />,
-      link: "https://github.com/dlvvs1/mini-projects-python/blob/main/Calculate_Your_Age.py"
+      github: "https://github.com/dlvvs1/mini-projects-python/blob/main/Calculate_Your_Age.py",
     },
     {
-      title: "Until You Die",
+      title: "Until You Die(mini-project)",
       tech: ["Python"],
-      description: "A console program estimating remaining lifetime based on age and assumed lifespan[cite: 42, 43].",
+      description: "A console program estimating remaining lifetime based on age and assumed lifespan.",
       features: ["Console-based output", "Time calculation", "User interaction logic"],
       icon: <Terminal className="text-red-400" />,
-      link: "https://github.com/dlvvs1/mini-projects-python/blob/main/until_u_die.py"
+      github: "https://github.com/dlvvs1/mini-projects-python/blob/main/until_u_die.py",
     },
     {
       title: "OOP Concepts",
@@ -40,7 +42,7 @@ export default function Projects({ scrollToHome }) {
       description: "Implementation of Object-Oriented Programming principles like classes and attributes.",
       features: ["Encapsulation", "Method simulation", "Real-world concepts"],
       icon: <Code className="text-amber-400" />,
-      link: "https://github.com/dlvvs1/OOPS"
+      github: "https://github.com/dlvvs1/OOPS",
     }
   ];
 
@@ -62,7 +64,7 @@ export default function Projects({ scrollToHome }) {
         <h2 className="text-4xl font-extrabold text-white">
           My <span className="text-blue-400">Projects</span>
         </h2>
-        <p className="text-slate-400">Technical solutions ranging from web apps to Python logic tools[cite: 9, 38].</p>
+        <p className="text-slate-400">Technical solutions ranging from web apps to Python logic tools.</p>
         <div className="h-1 w-20 bg-blue-500 mx-auto rounded-full" />
       </section>
 
@@ -74,10 +76,12 @@ export default function Projects({ scrollToHome }) {
                 {project.icon}
               </div>
               <div className="flex gap-3">
-                <a href={project.link} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                {/* GitHub Source Code Link */}
+                <a href={project.github} target="_blank" rel="noreferrer" title="View Source Code" className="text-slate-400 hover:text-white transition-colors">
                   <Github size={20} />
                 </a>
-                <a href={project.link} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white transition-colors">
+                {/* Live Demo Link */}
+                <a href={project.live} target="_blank" rel="noreferrer" title="View Live Demo" className="text-slate-400 hover:text-blue-400 transition-colors">
                   <ExternalLink size={20} />
                 </a>
               </div>

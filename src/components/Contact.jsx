@@ -10,6 +10,7 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
 
+    // --- CONFIGURATION ---
     const SERVICE_ID = "service_fg568lq";   
     const TEMPLATE_ID = "template_pb1bako"; 
     const PUBLIC_KEY = "eDXHD1eeySZrdSVdt";  
@@ -21,19 +22,16 @@ export default function Contact() {
     };
 
     try {
+      // Send the Email via EmailJS
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
       
-      const myNumber = "919177753027"; 
-      const text = `*New Portfolio Message!*%0A*Name:* ${formData.name}%0A*Email:* ${formData.email}%0A*Message:* ${formData.message}`;
-      const whatsappUrl = `https://wa.me/${myNumber}?text=${text}`;
+      alert("Thank you! Your message has been sent successfully. I will get back to you soon.");
 
-      alert("Success! Your message was sent to my Email. Opening WhatsApp for a quick reminder...");
-      window.open(whatsappUrl, "_blank");
-
+      // Reset Form
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       console.error("FAILED...", error);
-      alert("Something went wrong. Please check your EmailJS keys or your internet connection.");
+      alert("Something went wrong. Please try again or contact me directly via email.");
     } finally {
       setLoading(false);
     }
@@ -46,36 +44,40 @@ export default function Contact() {
         <h2 className="text-3xl md:text-4xl font-extrabold text-[#FFFFFF]">
           Get In <span className="text-[#00B4D8]">Touch</span>
         </h2>
-        <p className="text-[#90E0EF] mt-2 text-sm md:text-base">I typically respond within 24 hours.</p>
+        <p className="text-[#90E0EF] mt-2 text-sm md:text-base">
+          Have a question or want to work together?
+        </p>
         <div className="h-1 w-16 md:w-20 bg-[#00B4D8] mx-auto mt-4 rounded-full" />
       </div>
 
-      {/* Main Container - Adjusted rounded corners for mobile */}
+      {/* Main Container */}
       <div className="grid md:grid-cols-2 gap-0 bg-[#1B4D6E]/20 backdrop-blur-md border border-[#1B4D6E] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
         
         {/* Left Side: Contact Info */}
         <div className="p-6 md:p-8 lg:p-12 bg-gradient-to-br from-[#1B4D6E]/40 to-transparent">
           <h3 className="text-xl md:text-2xl font-bold text-[#FFFFFF] mb-6">Contact Information</h3>
           
-          <div className="space-y-6 md:y-8">
+          <div className="space-y-6 md:space-y-8">
             {/* Email */}
             <div className="flex items-center space-x-4 group">
               <div className="p-2.5 md:p-3 bg-[#00B4D8]/10 rounded-lg group-hover:bg-[#00B4D8]/20 transition-colors shrink-0">
-                <Mail className="text-[#00B4D8]" size={20} md:size={24} />
+                <Mail className="text-[#00B4D8]" size={20} />
               </div>
-              <div className="min-w-0"> {/* min-w-0 prevents text overflow on small screens */}
-                <p className="text-xs text-[#90E0EF] uppercase tracking-wider">Email</p>
-                <p className="font-medium text-[#FFFFFF] text-sm md:text-base truncate">danduleeladlvvs1@gmail.com</p>
+              <div className="min-w-0">
+                <p className="text-xs text-[#90E0EF] uppercase tracking-wider font-semibold">Email</p>
+                <p className="font-medium text-[#FFFFFF] text-sm md:text-base truncate">
+                  danduleeladlvvs1@gmail.com
+                </p>
               </div>
             </div>
 
-            {/* WhatsApp */}
+            {/* LinkedIn or Phone (Phone kept but styled professionally) */}
             <div className="flex items-center space-x-4 group">
               <div className="p-2.5 md:p-3 bg-[#00B4D8]/10 rounded-lg group-hover:bg-[#00B4D8]/20 transition-colors shrink-0">
-                <Phone className="text-[#00B4D8]" size={20} md:size={24} />
+                <Phone className="text-[#00B4D8]" size={20} />
               </div>
               <div>
-                <p className="text-xs text-[#90E0EF] uppercase tracking-wider">WhatsApp</p>
+                <p className="text-xs text-[#90E0EF] uppercase tracking-wider font-semibold">Phone</p>
                 <p className="font-medium text-[#FFFFFF] text-sm md:text-base">+91 9177753027</p>
               </div>
             </div>
@@ -83,10 +85,10 @@ export default function Contact() {
             {/* Location */}
             <div className="flex items-center space-x-4 group">
               <div className="p-2.5 md:p-3 bg-[#00B4D8]/10 rounded-lg group-hover:bg-[#00B4D8]/20 transition-colors shrink-0">
-                <MapPin className="text-[#00B4D8]" size={20} md:size={24} />
+                <MapPin className="text-[#00B4D8]" size={20} />
               </div>
               <div>
-                <p className="text-xs text-[#90E0EF] uppercase tracking-wider">Location</p>
+                <p className="text-xs text-[#90E0EF] uppercase tracking-wider font-semibold">Location</p>
                 <p className="font-medium text-[#FFFFFF] text-sm md:text-base">Dharmavaram, India</p>
               </div>
             </div>
@@ -103,7 +105,7 @@ export default function Contact() {
                 required
                 value={formData.name}
                 className="w-full bg-[#0D1B2A] border border-[#1B4D6E] rounded-xl px-4 py-3 focus:outline-none focus:border-[#00B4D8] focus:ring-1 focus:ring-[#00B4D8]/30 transition-all text-[#FFFFFF] text-sm"
-                placeholder="Full Name"
+                placeholder="Enter your name"
                 onChange={(e) => setFormData({...formData, name: e.target.value})}
               />
             </div>
@@ -139,7 +141,7 @@ export default function Contact() {
                 loading ? "opacity-50 cursor-not-allowed" : "hover:bg-[#90E0EF] active:scale-95 transform"
               }`}
             >
-              <span>{loading ? "Sending..." : "Send Message"}</span>
+              <span>{loading ? "Sending Message..." : "Send Message"}</span>
               <Send size={18} />
             </button>
           </form>
