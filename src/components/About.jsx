@@ -69,7 +69,7 @@ export default function About() {
       <div className="flex flex-wrap justify-center gap-4 md:gap-6 pt-4">
         {/* Resume Link */}
         <a 
-          href="/resume.pdf" 
+          href="./resume.pdf" 
           target="_blank" 
           rel="noopener noreferrer"
           className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition-all transform hover:-translate-y-1 flex items-center gap-2 shadow-lg shadow-blue-500/20"
