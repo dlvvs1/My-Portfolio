@@ -45,7 +45,7 @@ export default function About() {
               <h4 className="font-bold">Education</h4>
             </div>
             <p className="text-sm text-slate-300 font-medium">B.Tech - CSE (AIML)</p>
-            <p className="text-xs text-slate-500">CGPA: 9.39 (Sem 3)</p>
+            <p className="text-xs text-slate-500">CGPA: 9.33 (Sem 4)</p>
             <p className="text-xs text-slate-500 mt-2 italic">Sandip University </p>
           </div>
 
