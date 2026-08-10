@@ -3,6 +3,7 @@ export default function Navbar({ scrollToSection, refs }) {
         { name: "Home", ref: refs.homeRef },
         { name: "About", ref: refs.aboutRef },
         { name: "Skills", ref: refs.skillsRef },
+        { name: "Experience", ref: refs.experienceRef },
         { name: "Academics", ref: refs.academicsRef },
         { name: "Projects", ref: refs.projectsRef },
         { name: "Contact", ref: refs.contactRef },

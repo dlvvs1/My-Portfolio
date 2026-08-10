@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Home from "./components/Home";
 import About from "./components/About";
 import Skills from "./components/Skills";
+import Experience from "./components/Experience";
 import Academics from "./components/Academics";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
@@ -12,6 +13,7 @@ export default function App() {
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
+  const experienceRef = useRef(null);
   const academicsRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
@@ -35,7 +37,7 @@ export default function App() {
       {/* Pass the scroll function and refs to Navbar */}
       <Navbar 
         scrollToSection={scrollToSection} 
-        refs={{ homeRef, aboutRef, skillsRef, academicsRef, projectsRef, contactRef }} 
+        refs={{ homeRef, aboutRef, skillsRef, experienceRef, academicsRef, projectsRef, contactRef }} 
       />
 
       <main className="relative z-10 container mx-auto px-6 py-12 space-y-32">
@@ -49,6 +51,10 @@ export default function App() {
 
         <section ref={skillsRef}>
           <Skills />
+        </section>
+
+        <section ref={experienceRef}>
+          <Experience />
         </section>
 
         <section ref={academicsRef}>
