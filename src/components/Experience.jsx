@@ -31,13 +31,13 @@ export default function Experience() {
       certificate: {
         title: "Official Internship Certificate",
         subtitle: "Issued by Conquerors Software Technologies (27-03-2026)",
-        url: "./internship-certificate.jpg",
+        url: "./internship-certificate.jpg?v=2",
         downloadName: "Conquerors_Software_Internship_Certificate.jpg"
       },
       appreciation: {
         title: "Letter of Appreciation",
         subtitle: "Issued by Samson Sudhakar, Founder & CEO (27-03-2026)",
-        url: "./appreciation-letter.jpg",
+        url: "./appreciation-letter.jpg?v=2",
         downloadName: "Conquerors_Software_Letter_of_Appreciation.jpg"
       }
     }
