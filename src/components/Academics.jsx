@@ -33,7 +33,7 @@ export default function Academics() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white">Bachelor of Technology</h3>
-                <p className="text-blue-400 font-medium">CSE (AI & ML) • SNADIP University</p>
+                <p className="text-blue-400 font-medium">CSE (AI & ML) • Sandip University</p>
               </div>
             </div>
 
