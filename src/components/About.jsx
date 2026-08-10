@@ -1,8 +1,8 @@
-import { User, Code2, GraduationCap, Github, FileText, MapPin, Linkedin } from "lucide-react";
+import { User, Code2, GraduationCap, Github, FileText, MapPin, Linkedin, Sparkles } from "lucide-react";
 
 export default function About() {
   return (
-    <div className="max-w-4xl mx-auto space-y-12 animate-in fade-in duration-700">
+    <div className="max-w-5xl mx-auto space-y-12 animate-in fade-in duration-700">
       
       {/* Header Section */}
       <section className="text-center space-y-4">
@@ -10,59 +10,95 @@ export default function About() {
           About <span className="text-blue-400">Me</span>
         </h2>
         <p className="text-slate-400 flex items-center justify-center gap-2">
-          <MapPin size={16} /> Dharmavaram, India 
+          <MapPin size={16} className="text-indigo-400" /> Dharmavaram, India 
         </p>
         <div className="h-1 w-20 bg-blue-500 mx-auto rounded-full" />
       </section>
 
       {/* Main Content Grid */}
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid lg:grid-cols-12 gap-8 items-stretch">
         
-        {/* Bio Card */}
-        <div className="md:col-span-2 p-8 rounded-2xl bg-slate-800/40 border border-slate-700/50 backdrop-blur-sm">
-          <div className="flex items-center gap-3 mb-4 text-blue-400">
-            <User size={24} />
-            <h3 className="text-xl font-semibold">Profile</h3>
+        {/* Profile Photo Card */}
+        <div className="lg:col-span-4 flex flex-col justify-between">
+          <div className="relative group p-2 rounded-3xl bg-gradient-to-br from-blue-500/30 via-slate-800/60 to-indigo-500/30 border border-slate-700/60 backdrop-blur-md shadow-2xl space-y-4 text-center">
+            
+            {/* Image Wrapper */}
+            <div className="relative overflow-hidden rounded-2xl aspect-square border border-slate-700/80 bg-slate-900">
+              <img 
+                src="./profile.jpg?v=1" 
+                alt="Dandu Leela Vara Venkata Sai" 
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60" />
+            </div>
+
+            {/* Profile Info Below Photo */}
+            <div className="p-3 pt-0 space-y-1">
+              <h3 className="text-lg font-bold text-white tracking-wide">
+                Dandu Leela Vara Venkata Sai
+              </h3>
+              <p className="text-xs text-blue-400 font-semibold flex items-center justify-center gap-1">
+                <Sparkles size={14} /> AI & ML Specialist
+              </p>
+            </div>
+
           </div>
-          <p className="text-slate-300 leading-relaxed mb-4">
-            I am a motivated second-year B.Tech student specializing in 
-            <span className="text-white font-medium"> AI & ML</span>. 
-            I am passionate about coding and continuously improving my problem-solving 
-            skills through regular practice.
-          </p>
-          <p className="text-slate-400 leading-relaxed">
-            With proficiency in Python, C, and C++, I have developed several 
-            hands-on projects, ranging from logic-based Python games to structured 
-            web layouts.
-          </p>
         </div>
 
-        {/* Quick Info Sidebar */}
-        <div className="space-y-6">
-          <div className="p-6 rounded-2xl bg-blue-500/10 border border-blue-500/20">
-            <div className="flex items-center gap-3 mb-2 text-blue-400">
-              <GraduationCap size={20} />
-              <h4 className="font-bold">Education</h4>
+        {/* Bio Card & Details */}
+        <div className="lg:col-span-8 space-y-6 flex flex-col justify-between">
+          
+          {/* Bio Card */}
+          <div className="p-8 rounded-3xl bg-slate-800/40 border border-slate-700/50 backdrop-blur-sm space-y-4">
+            <div className="flex items-center gap-3 text-blue-400">
+              <User size={24} />
+              <h3 className="text-xl font-bold text-white">Personal Profile</h3>
             </div>
-            <p className="text-sm text-slate-300 font-medium">B.Tech - CSE (AIML)</p>
-            <p className="text-xs text-slate-500">CGPA: 9.33 (Sem 4)</p>
-            <p className="text-xs text-slate-500 mt-2 italic">Sandip University </p>
+            <p className="text-slate-300 leading-relaxed text-base">
+              I am a motivated B.Tech student specializing in 
+              <span className="text-white font-semibold"> Artificial Intelligence & Machine Learning</span> at Sandip University. 
+              I am passionate about software engineering, frontend development, and continuously improving my problem-solving 
+              skills through regular practice.
+            </p>
+            <p className="text-slate-400 leading-relaxed text-sm">
+              With proficiency in Python, React, C++, and Web Technologies, I have developed hands-on projects ranging from 
+              full-stack web applications to OpenCV computer vision simulations.
+            </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-indigo-500/10 border border-indigo-500/20">
-            <div className="flex items-center gap-3 mb-2 text-indigo-400">
-              <Code2 size={20} />
-              <h4 className="font-bold">Core Skills</h4>
+          {/* Quick Info Grid */}
+          <div className="grid md:grid-cols-2 gap-6">
+            
+            {/* Education Card */}
+            <div className="p-6 rounded-2xl bg-blue-500/10 border border-blue-500/20 space-y-1">
+              <div className="flex items-center gap-3 text-blue-400 mb-2">
+                <GraduationCap size={20} />
+                <h4 className="font-bold text-white text-sm">Education</h4>
+              </div>
+              <p className="text-sm text-slate-200 font-medium">B.Tech - CSE (AI & ML)</p>
+              <p className="text-xs text-slate-400">CGPA: <strong className="text-emerald-400 font-bold">9.33</strong> (Sem 4)</p>
+              <p className="text-xs text-slate-500 italic pt-1">Sandip University</p>
             </div>
-            <div className="flex flex-wrap gap-2">
-              {["Python", "C++", "SQL", "HTML", "React"].map((skill) => (
-                <span key={skill} className="text-xs bg-slate-900/50 px-2 py-1 rounded border border-slate-700 text-slate-300">
-                  {skill}
-                </span>
-              ))}
+
+            {/* Core Skills Card */}
+            <div className="p-6 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 space-y-2">
+              <div className="flex items-center gap-3 text-indigo-400 mb-2">
+                <Code2 size={20} />
+                <h4 className="font-bold text-white text-sm">Core Skills</h4>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {["Python", "React.js", "C++", "JavaScript", "Tailwind CSS", "OpenCV"].map((skill) => (
+                  <span key={skill} className="text-xs font-medium bg-slate-900/60 px-2.5 py-1 rounded-lg border border-slate-700 text-slate-300">
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
+
           </div>
+
         </div>
+
       </div>
 
       {/* Action Area: Professional Links */}
