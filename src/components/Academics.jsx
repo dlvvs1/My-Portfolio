@@ -6,6 +6,7 @@ export default function Academics() {
     { sem: "Semester 2", gpa: "8.04", status: "Completed" },
     { sem: "Semester 3", gpa: "9.39", status: "Completed" },
     { sem: "Semester 4", gpa: "9.33", status: "Completed" },
+    { sem: "Semester 5", gpa: "Active", status: "In Progress" },
   ];
 
   return (
