@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Briefcase, Calendar, MapPin, Award, ExternalLink, CheckCircle2, Eye, X, Download, Building2, Sparkles, UserCheck, FileText, Code2, Layers, BookOpen } from "lucide-react";
+import { Briefcase, Calendar, MapPin, Award, ExternalLink, CheckCircle2, Eye, X, Download, Building2, Sparkles, UserCheck, FileText, Code2 } from "lucide-react";
 
 export default function Experience() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -49,43 +49,43 @@ export default function Experience() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto space-y-12 animate-in fade-in duration-700">
+    <div className="max-w-6xl mx-auto space-y-8 sm:space-y-12 animate-in fade-in duration-700">
       
       {/* Header Section */}
       <section className="text-center space-y-4">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
+        <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
           <Briefcase size={14} /> Industrial Training & Experience
         </div>
-        <h2 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
           Work <span className="text-blue-400">Experience</span>
         </h2>
-        <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base">
+        <p className="text-slate-400 max-w-2xl mx-auto text-xs sm:text-sm md:text-base">
           Practical industry experience gained through offline software development internship at Conquerors Software Technologies, Hyderabad.
         </p>
         <div className="h-1 w-20 bg-blue-500 mx-auto rounded-full" />
       </section>
 
       {/* Main Experience Card */}
-      <div className="relative group p-8 md:p-10 rounded-3xl bg-slate-800/40 border border-slate-700/50 backdrop-blur-md hover:border-blue-500/40 transition-all duration-300 shadow-2xl">
+      <div className="relative group p-5 sm:p-8 md:p-10 rounded-3xl bg-slate-800/40 border border-slate-700/50 backdrop-blur-md hover:border-blue-500/40 transition-all duration-300 shadow-2xl">
         
         {/* Top Header Row */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-700/50">
           <div className="flex items-start gap-4">
-            <div className="p-4 bg-gradient-to-br from-blue-600/30 to-indigo-600/30 border border-blue-500/30 rounded-2xl text-blue-400 shrink-0 shadow-inner">
-              <Building2 size={36} />
+            <div className="p-3 sm:p-4 bg-gradient-to-br from-blue-600/30 to-indigo-600/30 border border-blue-500/30 rounded-2xl text-blue-400 shrink-0 shadow-inner">
+              <Building2 size={32} className="sm:w-9 sm:h-9" />
             </div>
             <div>
               <div className="flex flex-wrap items-center gap-2">
-                <h3 className="text-2xl md:text-3xl font-bold text-white">{experienceData.role}</h3>
-                <span className="text-xs font-bold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">{experienceData.role}</h3>
+                <span className="text-[10px] sm:text-xs font-bold px-2.5 py-0.5 sm:py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   {experienceData.type}
                 </span>
               </div>
-              <p className="text-lg font-semibold text-blue-400 mt-1">
+              <p className="text-base sm:text-lg font-semibold text-blue-400 mt-1">
                 {experienceData.company}
               </p>
               <p className="text-xs text-slate-400 mt-0.5 flex items-center gap-1">
-                <MapPin size={12} className="text-indigo-400" /> {experienceData.location}
+                <MapPin size={12} className="text-indigo-400 shrink-0" /> {experienceData.location}
               </p>
             </div>
           </div>
@@ -93,35 +93,35 @@ export default function Experience() {
           {/* Meta Info Badges */}
           <div className="flex flex-wrap lg:flex-col items-start lg:items-end gap-2 text-xs text-slate-300 font-medium">
             <span className="flex items-center gap-1.5 bg-slate-900/70 px-3 py-1.5 rounded-xl border border-slate-700/60">
-              <Calendar size={14} className="text-blue-400" /> {experienceData.duration}
+              <Calendar size={14} className="text-blue-400 shrink-0" /> {experienceData.duration}
             </span>
             <span className="flex items-center gap-1.5 bg-slate-900/70 px-3 py-1.5 rounded-xl border border-slate-700/60">
-              <UserCheck size={14} className="text-emerald-400" /> Mentors: {experienceData.mentors}
+              <UserCheck size={14} className="text-emerald-400 shrink-0" /> Mentors: {experienceData.mentors}
             </span>
           </div>
         </div>
 
         {/* Content Grid */}
-        <div className="grid lg:grid-cols-12 gap-8 pt-6">
+        <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 pt-6">
           
           {/* Left Column: Responsibilities & Highlights */}
           <div className="lg:col-span-7 space-y-6">
             <div>
-              <h4 className="text-sm font-bold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-2">
-                <FileText size={16} className="text-blue-400" /> Overview & Objectives
+              <h4 className="text-xs sm:text-sm font-bold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-2">
+                <FileText size={16} className="text-blue-400 shrink-0" /> Overview & Objectives
               </h4>
-              <p className="text-slate-300 leading-relaxed text-sm md:text-base">
+              <p className="text-slate-300 leading-relaxed text-xs sm:text-sm md:text-base">
                 {experienceData.description}
               </p>
             </div>
 
             <div className="space-y-3">
-              <h4 className="text-sm font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
-                <Sparkles size={16} className="text-amber-400" /> Key Accomplishments & Learning
+              <h4 className="text-xs sm:text-sm font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+                <Sparkles size={16} className="text-amber-400 shrink-0" /> Key Accomplishments & Learning
               </h4>
               <ul className="space-y-2.5">
                 {experienceData.highlights.map((point, index) => (
-                  <li key={index} className="text-xs md:text-sm text-slate-300 flex items-start gap-3">
+                  <li key={index} className="text-xs sm:text-sm text-slate-300 flex items-start gap-2.5 sm:gap-3">
                     <CheckCircle2 size={16} className="text-emerald-400 shrink-0 mt-0.5" />
                     <span>{point}</span>
                   </li>
@@ -132,11 +132,11 @@ export default function Experience() {
             {/* Practical Projects Developed During Internship */}
             <div className="p-4 rounded-2xl bg-slate-900/50 border border-slate-700/50 space-y-3">
               <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
-                <Code2 size={16} className="text-purple-400" /> Internship Projects Built
+                <Code2 size={16} className="text-purple-400 shrink-0" /> Internship Projects Built
               </h4>
               <div className="grid gap-2">
                 {experienceData.projectsBuilt.map((proj, idx) => (
-                  <div key={idx} className="flex items-center justify-between text-xs bg-slate-800/40 p-2.5 rounded-xl border border-slate-700/30">
+                  <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between text-xs bg-slate-800/40 p-2.5 rounded-xl border border-slate-700/30 gap-1 sm:gap-0">
                     <span className="font-semibold text-white">{proj.name}</span>
                     <span className="text-[10px] text-blue-400 font-mono">{proj.tech}</span>
                   </div>
@@ -147,9 +147,9 @@ export default function Experience() {
             {/* Tech Stack Pills */}
             <div>
               <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Technologies & Skills</h4>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {experienceData.skills.map((skill) => (
-                  <span key={skill} className="text-xs font-semibold px-3 py-1 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20">
+                  <span key={skill} className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-blue-500/10 text-blue-300 border border-blue-500/20">
                     {skill}
                   </span>
                 ))}
@@ -161,11 +161,11 @@ export default function Experience() {
           <div className="lg:col-span-5 space-y-4 flex flex-col justify-center">
             
             {/* Certificate Card 1: Internship Certificate */}
-            <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-700/70 space-y-3 hover:border-blue-500/50 transition-all shadow-lg">
+            <div className="p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-slate-700/70 space-y-3 hover:border-blue-500/50 transition-all shadow-lg">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 text-amber-400">
                   <Award size={18} />
-                  <h4 className="font-bold text-xs md:text-sm text-white">Internship Certificate</h4>
+                  <h4 className="font-bold text-xs sm:text-sm text-white">Internship Certificate</h4>
                 </div>
                 <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   Verified
@@ -208,11 +208,11 @@ export default function Experience() {
             </div>
 
             {/* Certificate Card 2: Letter of Appreciation */}
-            <div className="p-5 rounded-2xl bg-slate-900/80 border border-slate-700/70 space-y-3 hover:border-indigo-500/50 transition-all shadow-lg">
+            <div className="p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-slate-700/70 space-y-3 hover:border-indigo-500/50 transition-all shadow-lg">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 text-indigo-400">
                   <FileText size={18} />
-                  <h4 className="font-bold text-xs md:text-sm text-white">Letter of Appreciation</h4>
+                  <h4 className="font-bold text-xs sm:text-sm text-white">Letter of Appreciation</h4>
                 </div>
                 <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
                   CEO Recommendation
@@ -262,34 +262,34 @@ export default function Experience() {
       {/* Interactive Certificate & Document Lightbox Modal */}
       {isModalOpen && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md animate-in fade-in duration-200"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/85 backdrop-blur-md animate-in fade-in duration-200"
           onClick={() => setIsModalOpen(false)}
         >
           <div 
-            className="relative max-w-4xl w-full bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl space-y-4 p-6"
+            className="relative max-w-4xl w-full bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl space-y-4 p-4 sm:p-6 max-h-[92vh] flex flex-col justify-between"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header with Document Switcher Tabs */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
-              <div className="flex items-center gap-3">
-                <div className="p-2.5 bg-blue-500/10 rounded-xl text-blue-400">
-                  <Award size={22} />
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-3 border-b border-slate-800">
+              <div className="flex items-center gap-2.5">
+                <div className="p-2 bg-blue-500/10 rounded-xl text-blue-400">
+                  <Award size={20} />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">
+                  <h3 className="text-base sm:text-lg font-bold text-white">
                     {experienceData.documents[activeTab].title}
                   </h3>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-[11px] sm:text-xs text-slate-400">
                     {experienceData.documents[activeTab].subtitle}
                   </p>
                 </div>
               </div>
 
               {/* Tab Selector */}
-              <div className="flex items-center gap-2 bg-slate-950 p-1 rounded-xl border border-slate-800">
+              <div className="flex items-center justify-between w-full sm:w-auto gap-2 bg-slate-950 p-1 rounded-xl border border-slate-800">
                 <button
                   onClick={() => setActiveTab("certificate")}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex-1 sm:flex-initial text-center ${
                     activeTab === "certificate"
                       ? "bg-blue-600 text-white shadow"
                       : "text-slate-400 hover:text-white"
@@ -299,7 +299,7 @@ export default function Experience() {
                 </button>
                 <button
                   onClick={() => setActiveTab("appreciation")}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex-1 sm:flex-initial text-center ${
                     activeTab === "appreciation"
                       ? "bg-indigo-600 text-white shadow"
                       : "text-slate-400 hover:text-white"
@@ -309,7 +309,7 @@ export default function Experience() {
                 </button>
                 <button 
                   onClick={() => setIsModalOpen(false)}
-                  className="p-1.5 ml-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+                  className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
                   aria-label="Close modal"
                 >
                   <X size={18} />
@@ -318,24 +318,24 @@ export default function Experience() {
             </div>
 
             {/* Document Image Display Container */}
-            <div className="relative overflow-auto rounded-2xl bg-slate-950 border border-slate-800 flex items-center justify-center max-h-[68vh] p-2">
+            <div className="relative overflow-auto rounded-2xl bg-slate-950 border border-slate-800 flex items-center justify-center max-h-[60vh] sm:max-h-[68vh] p-2">
               <img 
                 src={experienceData.documents[activeTab].url} 
                 alt={experienceData.documents[activeTab].title} 
-                className="max-h-[65vh] w-auto object-contain rounded-lg shadow-xl"
+                className="max-h-[58vh] sm:max-h-[65vh] w-auto object-contain rounded-lg shadow-xl"
               />
             </div>
 
             {/* Modal Footer Controls */}
-            <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
-              <span className="text-xs text-slate-400">
-                Awarded to: <strong className="text-white">Dandu Leela Vara Venkata Sai</strong>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+              <span className="text-xs text-slate-400 text-center sm:text-left">
+                Issued to: <strong className="text-white">Dandu Leela Vara Venkata Sai</strong>
               </span>
-              <div className="flex items-center gap-3">
+              <div className="flex gap-2 w-full sm:w-auto">
                 <a
                   href={experienceData.documents[activeTab].url}
                   download={experienceData.documents[activeTab].downloadName}
-                  className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow-lg shadow-blue-500/20"
+                  className="flex-1 sm:flex-none px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-lg shadow-blue-500/20"
                 >
                   <Download size={14} /> Download Document
                 </a>

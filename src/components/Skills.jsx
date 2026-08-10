@@ -50,41 +50,41 @@ export default function Skills() {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto space-y-12 animate-in fade-in duration-700">
+    <div className="max-w-6xl mx-auto space-y-8 sm:space-y-12 animate-in fade-in duration-700">
       {/* Header */}
       <section className="text-center space-y-4">
-        <h2 className="text-4xl font-extrabold text-white">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
           Technical <span className="text-blue-400">Toolkit</span>
         </h2>
-        <p className="text-slate-400 max-w-2xl mx-auto">
+        <p className="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
           A comprehensive overview of my programming languages, frameworks, and core engineering concepts.
         </p>
         <div className="h-1 w-20 bg-blue-500 mx-auto rounded-full" />
       </section>
 
       {/* Skills Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {skillGroups.map((group, idx) => (
           <div 
             key={idx} 
-            className="p-6 rounded-3xl bg-slate-800/30 border border-slate-700/50 backdrop-blur-xl hover:border-blue-500/30 transition-all group"
+            className="p-5 sm:p-6 rounded-3xl bg-slate-800/30 border border-slate-700/50 backdrop-blur-xl hover:border-blue-500/30 transition-all group"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-slate-900/50 rounded-xl group-hover:scale-110 transition-transform">
+              <div className="p-2 bg-slate-900/50 rounded-xl group-hover:scale-110 transition-transform shrink-0">
                 {group.icon}
               </div>
-              <h3 className="text-lg font-bold text-white">{group.category}</h3>
+              <h3 className="text-base sm:text-lg font-bold text-white">{group.category}</h3>
             </div>
 
-            <div className="space-y-5">
+            <div className="space-y-4 sm:space-y-5">
               {group.skills.map((skill, sIdx) => (
-                <div key={sIdx} className="space-y-2">
-                  <div className="flex justify-between items-end">
+                <div key={sIdx} className="space-y-1.5 sm:space-y-2">
+                  <div className="flex justify-between items-end gap-2">
                     <div>
-                      <p className="text-sm font-semibold text-slate-200">{skill.name}</p>
+                      <p className="text-xs sm:text-sm font-semibold text-slate-200">{skill.name}</p>
                       <p className="text-[10px] text-slate-500 italic">{skill.desc}</p>
                     </div>
-                    <span className="text-[10px] font-bold text-blue-400 uppercase tracking-tighter">
+                    <span className="text-[10px] font-bold text-blue-400 uppercase tracking-tighter shrink-0">
                       {skill.level}
                     </span>
                   </div>

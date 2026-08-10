@@ -73,33 +73,35 @@ export default function Projects({ scrollToHome }) {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto space-y-12 animate-in fade-in duration-700">
+    <div className="max-w-6xl mx-auto space-y-8 sm:space-y-12 animate-in fade-in duration-700">
       
       {/* Back to Home Button */}
       <div className="flex justify-start">
         <button 
           onClick={scrollToHome}
-          className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors group font-medium"
+          className="flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors group font-medium text-xs sm:text-sm"
         >
-          <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+          <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
           Back to Home
         </button>
       </div>
 
       <section className="text-center space-y-4">
-        <h2 className="text-4xl font-extrabold text-white">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
           My <span className="text-blue-400">Projects</span>
         </h2>
-        <p className="text-slate-400">Technical solutions ranging from full-stack web applications to AI & computer vision simulations.</p>
+        <p className="text-slate-400 max-w-2xl mx-auto text-xs sm:text-sm md:text-base">
+          Technical solutions ranging from full-stack web applications to AI & computer vision simulations.
+        </p>
         <div className="h-1 w-20 bg-blue-500 mx-auto rounded-full" />
       </section>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {projectData.map((project, index) => (
-          <div key={index} className="group p-6 rounded-3xl bg-slate-800/40 border border-slate-700/50 backdrop-blur-md hover:border-blue-500/50 transition-all hover:-translate-y-2 flex flex-col justify-between">
+          <div key={index} className="group p-5 sm:p-6 rounded-3xl bg-slate-800/40 border border-slate-700/50 backdrop-blur-md hover:border-blue-500/50 transition-all hover:-translate-y-1.5 flex flex-col justify-between">
             <div>
               <div className="flex justify-between items-start mb-4">
-                <div className="p-3 bg-slate-900/50 rounded-2xl">
+                <div className="p-2.5 sm:p-3 bg-slate-900/50 rounded-2xl shrink-0">
                   {project.icon}
                 </div>
                 <div className="flex gap-3">
@@ -118,22 +120,22 @@ export default function Projects({ scrollToHome }) {
                 </div>
               </div>
 
-              <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-              <p className="text-sm text-slate-400 mb-4 line-clamp-2">{project.description}</p>
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{project.title}</h3>
+              <p className="text-xs sm:text-sm text-slate-400 mb-4 line-clamp-2">{project.description}</p>
               
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
                 {project.tech.map((t) => (
-                  <span key={t} className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                  <span key={t} className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
                     {t}
                   </span>
                 ))}
               </div>
             </div>
 
-            <ul className="space-y-1 border-t border-slate-700/50 pt-4">
+            <ul className="space-y-1 border-t border-slate-700/50 pt-3">
               {project.features.map((f, i) => (
                 <li key={i} className="text-xs text-slate-500 flex items-center gap-2">
-                  <div className="h-1 w-1 bg-blue-500 rounded-full" /> {f}
+                  <div className="h-1 w-1 bg-blue-500 rounded-full shrink-0" /> {f}
                 </li>
               ))}
             </ul>
