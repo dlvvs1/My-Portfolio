@@ -1,7 +1,33 @@
-import { ExternalLink, Github, Code, Terminal, Layers, ArrowLeft } from "lucide-react";
+import { ExternalLink, Github, Code, Terminal, Layers, ArrowLeft, BookOpen, Database, Cpu } from "lucide-react";
 
 export default function Projects({ scrollToHome }) {
   const projectData = [
+    {
+      title: "E-Learning Portal",
+      tech: ["React 19", "Tailwind CSS", "Framer Motion", "Vite"],
+      description: "A modern, dark-mode E-Learning Portal designed to centralize university Computer Science coursework.",
+      features: ["Interactive subject modules", "Real-time progress tracking", "Unit-wise PDF access"],
+      icon: <BookOpen className="text-cyan-400" />,
+      github: "https://github.com/dlvvs1/elearning-portal",
+      live: "https://dlvvs1.github.io/elearning-portal/"
+    },
+    {
+      title: "Full-Stack Restaurant Management System",
+      tech: ["React", "Node.js", "Express.js", "PostgreSQL", "Supabase"],
+      description: "A responsive full-stack POS and restaurant billing platform for order management and real-time sales analytics.",
+      features: ["Point of Sale (POS) billing", "Atomic checkout transactions", "Real-time sales analytics"],
+      icon: <Database className="text-emerald-400" />,
+      github: "https://github.com/dlvvs1/restaurant-management-system",
+      live: "https://dlvvs1.github.io/restaurant-management-system/"
+    },
+    {
+      title: "AI Self-Driving Car Simulation",
+      tech: ["Python", "OpenCV", "NumPy", "Computer Vision"],
+      description: "An OpenCV-powered Python simulation that processes real-time video feeds to detect road lanes and output steering decisions.",
+      features: ["Canny edge detection", "ROI masking & Hough lines", "Dynamic steering logic"],
+      icon: <Cpu className="text-purple-400" />,
+      github: "https://github.com/dlvvs1/Self-Driving-Simulation"
+    },
     {
       title: "Personal Portfolio Website",
       tech: ["React", "Tailwind CSS", "Vite"],
@@ -9,7 +35,7 @@ export default function Projects({ scrollToHome }) {
       features: ["Component-based structure", "Responsive design", "Smooth Navigation"],
       icon: <Layers className="text-blue-400" />,
       github: "https://github.com/dlvvs1/My-Portfolio",
-      live: "https://dlvvs1.github.io/My-Portfolio/" // Your main portfolio live link
+      live: "https://dlvvs1.github.io/My-Portfolio/"
     },
     {
       title: "Calculator Web App(mini-project)",
@@ -18,7 +44,7 @@ export default function Projects({ scrollToHome }) {
       features: ["Basic Arithmetic", "Button-based input", "Clean UI"],
       icon: <Code className="text-emerald-400" />,
       github: "https://github.com/dlvvs1/Calculator",
-      live: "https://dlvvs1.github.io/Calculator/" // The link we just fixed!
+      live: "https://dlvvs1.github.io/Calculator/"
     },
     {
       title: "Age Calculator(mini-project)",
@@ -64,38 +90,44 @@ export default function Projects({ scrollToHome }) {
         <h2 className="text-4xl font-extrabold text-white">
           My <span className="text-blue-400">Projects</span>
         </h2>
-        <p className="text-slate-400">Technical solutions ranging from web apps to Python logic tools.</p>
+        <p className="text-slate-400">Technical solutions ranging from full-stack web applications to AI & computer vision simulations.</p>
         <div className="h-1 w-20 bg-blue-500 mx-auto rounded-full" />
       </section>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projectData.map((project, index) => (
-          <div key={index} className="group p-6 rounded-3xl bg-slate-800/40 border border-slate-700/50 backdrop-blur-md hover:border-blue-500/50 transition-all hover:-translate-y-2">
-            <div className="flex justify-between items-start mb-4">
-              <div className="p-3 bg-slate-900/50 rounded-2xl">
-                {project.icon}
+          <div key={index} className="group p-6 rounded-3xl bg-slate-800/40 border border-slate-700/50 backdrop-blur-md hover:border-blue-500/50 transition-all hover:-translate-y-2 flex flex-col justify-between">
+            <div>
+              <div className="flex justify-between items-start mb-4">
+                <div className="p-3 bg-slate-900/50 rounded-2xl">
+                  {project.icon}
+                </div>
+                <div className="flex gap-3">
+                  {/* GitHub Source Code Link */}
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noreferrer" title="View Source Code" className="text-slate-400 hover:text-white transition-colors">
+                      <Github size={20} />
+                    </a>
+                  )}
+                  {/* Live Demo Link */}
+                  {project.live && (
+                    <a href={project.live} target="_blank" rel="noreferrer" title="View Live Demo" className="text-slate-400 hover:text-blue-400 transition-colors">
+                      <ExternalLink size={20} />
+                    </a>
+                  )}
+                </div>
               </div>
-              <div className="flex gap-3">
-                {/* GitHub Source Code Link */}
-                <a href={project.github} target="_blank" rel="noreferrer" title="View Source Code" className="text-slate-400 hover:text-white transition-colors">
-                  <Github size={20} />
-                </a>
-                {/* Live Demo Link */}
-                <a href={project.live} target="_blank" rel="noreferrer" title="View Live Demo" className="text-slate-400 hover:text-blue-400 transition-colors">
-                  <ExternalLink size={20} />
-                </a>
-              </div>
-            </div>
 
-            <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-            <p className="text-sm text-slate-400 mb-4 line-clamp-2">{project.description}</p>
-            
-            <div className="flex flex-wrap gap-2 mb-4">
-              {project.tech.map((t) => (
-                <span key={t} className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                  {t}
-                </span>
-              ))}
+              <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+              <p className="text-sm text-slate-400 mb-4 line-clamp-2">{project.description}</p>
+              
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tech.map((t) => (
+                  <span key={t} className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                    {t}
+                  </span>
+                ))}
+              </div>
             </div>
 
             <ul className="space-y-1 border-t border-slate-700/50 pt-4">
